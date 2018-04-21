@@ -8,7 +8,7 @@ bootstrap = Bootstrap(app)  #初始化Flask-Bootstrap
 
 @app.route('/')
 def index():
-    return render_template('base_kid.html')
+    return render_template('index.html')
 
 
 @app.route('/user/<name>')
