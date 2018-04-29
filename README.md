@@ -1,4 +1,4 @@
-# simple-blog
+# A simple-blog
 
 #register, login, logout, publish articles, make comments
 
