@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flasky</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+
+    $.get("http://127.0.0.1:5000/api/posts/",
+      function (data){
+        var datastring = '';
+        for(var x in data.posts)
+        {
+            datastring +='<li>'+data.posts[x].body+data.posts[x].author + '<a href ="article.html?id='+data.posts[x].id+'">'+'文章'+'</a>' +'</li>';
+        }
+        $("#test").html(datastring);
+      });
+
+    //function test(){
+    //        var inputVal = document.getElementById("text_post").value;
+    //    }
+    //var newpost=$("#text_post").val();
+
+    //$.post("http://127.0.0.1:5000/api/posts/",{"body":newpost},function(data){
+    //     alert("Data Loaded: " + inputVal);
+    //   },"html");
+</script>
+
+
+</head>
+<body>
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"
+             data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Flasky</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<ul id="test"></ul>
+<div>
+    <input type="text" id="text_post">
+    <input type="button" value="点击" onclick="test()">
+</div>
+
+</body>
